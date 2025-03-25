@@ -1,0 +1,404 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d0" for="node" attr.name="bipartite" attr.type="long"/>
+<graph edgedefault="undirected"><node id="USA">
+  <data key="d0">1</data>
+</node>
+<node id="Tunisia">
+  <data key="d0">1</data>
+</node>
+<node id="Switzerland">
+  <data key="d0">1</data>
+</node>
+<node id="Uruguay">
+  <data key="d0">1</data>
+</node>
+<node id="Netherlands">
+  <data key="d0">1</data>
+</node>
+<node id="England">
+  <data key="d0">1</data>
+</node>
+<node id="France">
+  <data key="d0">1</data>
+</node>
+<node id="Iran">
+  <data key="d0">1</data>
+</node>
+<node id="Morocco">
+  <data key="d0">1</data>
+</node>
+<node id="Senegal">
+  <data key="d0">1</data>
+</node>
+<node id="Wales">
+  <data key="d0">1</data>
+</node>
+<node id="Germany">
+  <data key="d0">1</data>
+</node>
+<node id="Ghana">
+  <data key="d0">1</data>
+</node>
+<node id="Ecuador">
+  <data key="d0">1</data>
+</node>
+<node id="Serbia">
+  <data key="d0">1</data>
+</node>
+<node id="Belgium">
+  <data key="d0">1</data>
+</node>
+<node id="Mexico">
+  <data key="d0">1</data>
+</node>
+<node id="Spain">
+  <data key="d0">1</data>
+</node>
+<node id="Qatar">
+  <data key="d0">1</data>
+</node>
+<node id="Japan">
+  <data key="d0">1</data>
+</node>
+<node id="Denmark">
+  <data key="d0">1</data>
+</node>
+<node id="Australia">
+  <data key="d0">1</data>
+</node>
+<node id="Brazil">
+  <data key="d0">1</data>
+</node>
+<node id="Poland">
+  <data key="d0">1</data>
+</node>
+<node id="Portugal">
+  <data key="d0">1</data>
+</node>
+<node id="South Korea">
+  <data key="d0">1</data>
+</node>
+<node id="Canada">
+  <data key="d0">1</data>
+</node>
+<node id="Croatia">
+  <data key="d0">1</data>
+</node>
+<node id="Argentina">
+  <data key="d0">1</data>
+</node>
+<node id="Cameroon">
+  <data key="d0">1</data>
+</node>
+<node id="Costa Rica">
+  <data key="d0">1</data>
+</node>
+<node id="Saudi Arabia">
+  <data key="d0">1</data>
+</node>
+<edge source="USA" target="Switzerland"/>
+<edge source="USA" target="Uruguay"/>
+<edge source="USA" target="England"/>
+<edge source="USA" target="France"/>
+<edge source="USA" target="Morocco"/>
+<edge source="USA" target="Senegal"/>
+<edge source="USA" target="Germany"/>
+<edge source="USA" target="Ghana"/>
+<edge source="USA" target="Ecuador"/>
+<edge source="USA" target="Serbia"/>
+<edge source="USA" target="Belgium"/>
+<edge source="USA" target="Spain"/>
+<edge source="USA" target="Japan"/>
+<edge source="USA" target="Denmark"/>
+<edge source="USA" target="Australia"/>
+<edge source="USA" target="Brazil"/>
+<edge source="USA" target="Poland"/>
+<edge source="USA" target="Portugal"/>
+<edge source="USA" target="Argentina"/>
+<edge source="USA" target="Croatia"/>
+<edge source="USA" target="Canada"/>
+<edge source="USA" target="Cameroon"/>
+<edge source="USA" target="Wales"/>
+<edge source="Tunisia" target="Poland"/>
+<edge source="Tunisia" target="Switzerland"/>
+<edge source="Tunisia" target="Qatar"/>
+<edge source="Tunisia" target="Denmark"/>
+<edge source="Tunisia" target="Australia"/>
+<edge source="Tunisia" target="Senegal"/>
+<edge source="Switzerland" target="Uruguay"/>
+<edge source="Switzerland" target="Netherlands"/>
+<edge source="Switzerland" target="England"/>
+<edge source="Switzerland" target="France"/>
+<edge source="Switzerland" target="Morocco"/>
+<edge source="Switzerland" target="Senegal"/>
+<edge source="Switzerland" target="Germany"/>
+<edge source="Switzerland" target="Ghana"/>
+<edge source="Switzerland" target="Ecuador"/>
+<edge source="Switzerland" target="Serbia"/>
+<edge source="Switzerland" target="Belgium"/>
+<edge source="Switzerland" target="Spain"/>
+<edge source="Switzerland" target="Japan"/>
+<edge source="Switzerland" target="Denmark"/>
+<edge source="Switzerland" target="Brazil"/>
+<edge source="Switzerland" target="Poland"/>
+<edge source="Switzerland" target="Portugal"/>
+<edge source="Switzerland" target="South Korea"/>
+<edge source="Switzerland" target="Argentina"/>
+<edge source="Switzerland" target="Croatia"/>
+<edge source="Switzerland" target="Canada"/>
+<edge source="Switzerland" target="Cameroon"/>
+<edge source="Switzerland" target="Wales"/>
+<edge source="Uruguay" target="Netherlands"/>
+<edge source="Uruguay" target="England"/>
+<edge source="Uruguay" target="France"/>
+<edge source="Uruguay" target="Senegal"/>
+<edge source="Uruguay" target="Germany"/>
+<edge source="Uruguay" target="Ghana"/>
+<edge source="Uruguay" target="Serbia"/>
+<edge source="Uruguay" target="Belgium"/>
+<edge source="Uruguay" target="Mexico"/>
+<edge source="Uruguay" target="Spain"/>
+<edge source="Uruguay" target="Japan"/>
+<edge source="Uruguay" target="Denmark"/>
+<edge source="Uruguay" target="Brazil"/>
+<edge source="Uruguay" target="Poland"/>
+<edge source="Uruguay" target="Portugal"/>
+<edge source="Uruguay" target="South Korea"/>
+<edge source="Uruguay" target="Argentina"/>
+<edge source="Uruguay" target="Croatia"/>
+<edge source="Uruguay" target="Cameroon"/>
+<edge source="Uruguay" target="Wales"/>
+<edge source="Netherlands" target="England"/>
+<edge source="Netherlands" target="France"/>
+<edge source="Netherlands" target="Iran"/>
+<edge source="Netherlands" target="Morocco"/>
+<edge source="Netherlands" target="Germany"/>
+<edge source="Netherlands" target="Ghana"/>
+<edge source="Netherlands" target="Ecuador"/>
+<edge source="Netherlands" target="Serbia"/>
+<edge source="Netherlands" target="Belgium"/>
+<edge source="Netherlands" target="Mexico"/>
+<edge source="Netherlands" target="Spain"/>
+<edge source="Netherlands" target="Denmark"/>
+<edge source="Netherlands" target="Brazil"/>
+<edge source="Netherlands" target="Poland"/>
+<edge source="Netherlands" target="Portugal"/>
+<edge source="Netherlands" target="Canada"/>
+<edge source="Netherlands" target="Croatia"/>
+<edge source="Netherlands" target="Argentina"/>
+<edge source="Netherlands" target="Cameroon"/>
+<edge source="England" target="France"/>
+<edge source="England" target="Morocco"/>
+<edge source="England" target="Senegal"/>
+<edge source="England" target="Germany"/>
+<edge source="England" target="Ghana"/>
+<edge source="England" target="Belgium"/>
+<edge source="England" target="Spain"/>
+<edge source="England" target="Japan"/>
+<edge source="England" target="Denmark"/>
+<edge source="England" target="Brazil"/>
+<edge source="England" target="Portugal"/>
+<edge source="England" target="South Korea"/>
+<edge source="England" target="Argentina"/>
+<edge source="England" target="Croatia"/>
+<edge source="England" target="Wales"/>
+<edge source="France" target="Morocco"/>
+<edge source="France" target="Senegal"/>
+<edge source="France" target="Germany"/>
+<edge source="France" target="Ghana"/>
+<edge source="France" target="Serbia"/>
+<edge source="France" target="Belgium"/>
+<edge source="France" target="Spain"/>
+<edge source="France" target="Japan"/>
+<edge source="France" target="Denmark"/>
+<edge source="France" target="Brazil"/>
+<edge source="France" target="Poland"/>
+<edge source="France" target="Portugal"/>
+<edge source="France" target="South Korea"/>
+<edge source="France" target="Argentina"/>
+<edge source="France" target="Croatia"/>
+<edge source="France" target="Canada"/>
+<edge source="France" target="Cameroon"/>
+<edge source="France" target="Costa Rica"/>
+<edge source="France" target="Wales"/>
+<edge source="Iran" target="Spain"/>
+<edge source="Iran" target="Poland"/>
+<edge source="Iran" target="Portugal"/>
+<edge source="Iran" target="Canada"/>
+<edge source="Iran" target="Croatia"/>
+<edge source="Iran" target="Argentina"/>
+<edge source="Iran" target="Cameroon"/>
+<edge source="Iran" target="Denmark"/>
+<edge source="Iran" target="Ecuador"/>
+<edge source="Iran" target="Serbia"/>
+<edge source="Iran" target="Mexico"/>
+<edge source="Morocco" target="Senegal"/>
+<edge source="Morocco" target="Wales"/>
+<edge source="Morocco" target="Germany"/>
+<edge source="Morocco" target="Ecuador"/>
+<edge source="Morocco" target="Serbia"/>
+<edge source="Morocco" target="Mexico"/>
+<edge source="Morocco" target="Spain"/>
+<edge source="Morocco" target="Denmark"/>
+<edge source="Morocco" target="Brazil"/>
+<edge source="Morocco" target="Poland"/>
+<edge source="Morocco" target="Portugal"/>
+<edge source="Morocco" target="Argentina"/>
+<edge source="Morocco" target="Canada"/>
+<edge source="Morocco" target="Croatia"/>
+<edge source="Morocco" target="Cameroon"/>
+<edge source="Morocco" target="Costa Rica"/>
+<edge source="Morocco" target="Saudi Arabia"/>
+<edge source="Senegal" target="Germany"/>
+<edge source="Senegal" target="Ghana"/>
+<edge source="Senegal" target="Belgium"/>
+<edge source="Senegal" target="Mexico"/>
+<edge source="Senegal" target="Spain"/>
+<edge source="Senegal" target="Japan"/>
+<edge source="Senegal" target="Denmark"/>
+<edge source="Senegal" target="Brazil"/>
+<edge source="Senegal" target="Poland"/>
+<edge source="Senegal" target="Portugal"/>
+<edge source="Senegal" target="South Korea"/>
+<edge source="Senegal" target="Argentina"/>
+<edge source="Senegal" target="Croatia"/>
+<edge source="Senegal" target="Canada"/>
+<edge source="Senegal" target="Cameroon"/>
+<edge source="Senegal" target="Wales"/>
+<edge source="Wales" target="Ghana"/>
+<edge source="Wales" target="Ecuador"/>
+<edge source="Wales" target="Serbia"/>
+<edge source="Wales" target="Belgium"/>
+<edge source="Wales" target="Denmark"/>
+<edge source="Wales" target="Australia"/>
+<edge source="Wales" target="Brazil"/>
+<edge source="Wales" target="Poland"/>
+<edge source="Wales" target="Portugal"/>
+<edge source="Wales" target="South Korea"/>
+<edge source="Wales" target="Argentina"/>
+<edge source="Wales" target="Croatia"/>
+<edge source="Wales" target="Cameroon"/>
+<edge source="Germany" target="Ghana"/>
+<edge source="Germany" target="Serbia"/>
+<edge source="Germany" target="Belgium"/>
+<edge source="Germany" target="Spain"/>
+<edge source="Germany" target="Japan"/>
+<edge source="Germany" target="Denmark"/>
+<edge source="Germany" target="Brazil"/>
+<edge source="Germany" target="Poland"/>
+<edge source="Germany" target="Portugal"/>
+<edge source="Germany" target="South Korea"/>
+<edge source="Germany" target="Canada"/>
+<edge source="Germany" target="Croatia"/>
+<edge source="Germany" target="Argentina"/>
+<edge source="Germany" target="Cameroon"/>
+<edge source="Ghana" target="Ecuador"/>
+<edge source="Ghana" target="Serbia"/>
+<edge source="Ghana" target="Belgium"/>
+<edge source="Ghana" target="Mexico"/>
+<edge source="Ghana" target="Spain"/>
+<edge source="Ghana" target="Qatar"/>
+<edge source="Ghana" target="Japan"/>
+<edge source="Ghana" target="Denmark"/>
+<edge source="Ghana" target="Brazil"/>
+<edge source="Ghana" target="Poland"/>
+<edge source="Ghana" target="South Korea"/>
+<edge source="Ghana" target="Argentina"/>
+<edge source="Ghana" target="Canada"/>
+<edge source="Ghana" target="Croatia"/>
+<edge source="Ghana" target="Cameroon"/>
+<edge source="Ecuador" target="Spain"/>
+<edge source="Ecuador" target="Poland"/>
+<edge source="Ecuador" target="Mexico"/>
+<edge source="Ecuador" target="Argentina"/>
+<edge source="Ecuador" target="Canada"/>
+<edge source="Ecuador" target="Japan"/>
+<edge source="Ecuador" target="Cameroon"/>
+<edge source="Ecuador" target="Costa Rica"/>
+<edge source="Ecuador" target="Belgium"/>
+<edge source="Serbia" target="Mexico"/>
+<edge source="Serbia" target="Denmark"/>
+<edge source="Serbia" target="Australia"/>
+<edge source="Serbia" target="Brazil"/>
+<edge source="Serbia" target="Poland"/>
+<edge source="Serbia" target="Portugal"/>
+<edge source="Serbia" target="South Korea"/>
+<edge source="Serbia" target="Argentina"/>
+<edge source="Serbia" target="Croatia"/>
+<edge source="Serbia" target="Canada"/>
+<edge source="Serbia" target="Cameroon"/>
+<edge source="Belgium" target="Spain"/>
+<edge source="Belgium" target="Japan"/>
+<edge source="Belgium" target="Denmark"/>
+<edge source="Belgium" target="Brazil"/>
+<edge source="Belgium" target="Poland"/>
+<edge source="Belgium" target="Portugal"/>
+<edge source="Belgium" target="Argentina"/>
+<edge source="Belgium" target="Croatia"/>
+<edge source="Belgium" target="Canada"/>
+<edge source="Belgium" target="Cameroon"/>
+<edge source="Mexico" target="Poland"/>
+<edge source="Mexico" target="Portugal"/>
+<edge source="Mexico" target="South Korea"/>
+<edge source="Mexico" target="Argentina"/>
+<edge source="Mexico" target="Croatia"/>
+<edge source="Mexico" target="Cameroon"/>
+<edge source="Mexico" target="Costa Rica"/>
+<edge source="Spain" target="Japan"/>
+<edge source="Spain" target="Denmark"/>
+<edge source="Spain" target="Brazil"/>
+<edge source="Spain" target="Poland"/>
+<edge source="Spain" target="Portugal"/>
+<edge source="Spain" target="Argentina"/>
+<edge source="Spain" target="Croatia"/>
+<edge source="Spain" target="Cameroon"/>
+<edge source="Spain" target="Costa Rica"/>
+<edge source="Qatar" target="South Korea"/>
+<edge source="Japan" target="Denmark"/>
+<edge source="Japan" target="South Korea"/>
+<edge source="Japan" target="Croatia"/>
+<edge source="Japan" target="Argentina"/>
+<edge source="Japan" target="Australia"/>
+<edge source="Japan" target="Brazil"/>
+<edge source="Denmark" target="Australia"/>
+<edge source="Denmark" target="Brazil"/>
+<edge source="Denmark" target="Poland"/>
+<edge source="Denmark" target="Portugal"/>
+<edge source="Denmark" target="South Korea"/>
+<edge source="Denmark" target="Argentina"/>
+<edge source="Denmark" target="Croatia"/>
+<edge source="Denmark" target="Canada"/>
+<edge source="Denmark" target="Cameroon"/>
+<edge source="Australia" target="Poland"/>
+<edge source="Australia" target="Croatia"/>
+<edge source="Australia" target="Cameroon"/>
+<edge source="Australia" target="Costa Rica"/>
+<edge source="Brazil" target="Poland"/>
+<edge source="Brazil" target="Portugal"/>
+<edge source="Brazil" target="South Korea"/>
+<edge source="Brazil" target="Argentina"/>
+<edge source="Brazil" target="Croatia"/>
+<edge source="Brazil" target="Costa Rica"/>
+<edge source="Poland" target="Portugal"/>
+<edge source="Poland" target="South Korea"/>
+<edge source="Poland" target="Argentina"/>
+<edge source="Poland" target="Croatia"/>
+<edge source="Poland" target="Cameroon"/>
+<edge source="Poland" target="Saudi Arabia"/>
+<edge source="Portugal" target="South Korea"/>
+<edge source="Portugal" target="Argentina"/>
+<edge source="Portugal" target="Canada"/>
+<edge source="Portugal" target="Croatia"/>
+<edge source="Portugal" target="Costa Rica"/>
+<edge source="South Korea" target="Saudi Arabia"/>
+<edge source="South Korea" target="Argentina"/>
+<edge source="South Korea" target="Croatia"/>
+<edge source="South Korea" target="Cameroon"/>
+<edge source="Canada" target="Croatia"/>
+<edge source="Canada" target="Cameroon"/>
+<edge source="Croatia" target="Argentina"/>
+<edge source="Croatia" target="Cameroon"/>
+<edge source="Argentina" target="Cameroon"/>
+<edge source="Argentina" target="Costa Rica"/>
+<edge source="Cameroon" target="Saudi Arabia"/>
+</graph></graphml>
