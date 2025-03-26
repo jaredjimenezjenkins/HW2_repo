@@ -1,0 +1,400 @@
+---
+title: "HW 2 CSSM"
+name: "Jared Jimenez-Jenkins"
+output:
+  html_document:
+    df_print: paged
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+
+```{r}
+library(sf)
+library(dplyr)
+library(ggplot2)
+library(igraph)
+```
+
+# PERU DATA
+
+```{r}
+rm(list = ls())
+
+library(sf)
+
+case1link='https://github.com/jaredjimenezjenkins/HW2_repo/raw/refs/heads/main/peru_elites.graphml'
+
+library(igraph)
+
+elites=read_graph(case1link,format='graphml')
+
+summary(elites)
+```
+
+```{r}
+# I first check if the network is connected.
+
+is_connected <- is_connected(elites)
+if (!is_connected) {
+  components <- components(elites)
+  giant_component <- induced_subgraph(elites, which(components$membership == which.max(components$csize)))
+} else {
+  giant_component <- elites
+}
+
+cat("Is the network connected?", is_connected, "\n")
+```
+
+```{r}
+# The network wasnt connected! I proceeded with extracting the giant component (largest connected subgraph) to make sure the new graph is connected. 
+
+components <- components(elites)  
+giant_component <- induced_subgraph(elites, which(components$membership == which.max(components$csize)))
+
+cat("Is the giant component connected?", is_connected(giant_component), "\n")
+```
+
+```{r}
+# I proceeded to find the nodes in the diameter, which were Michell Miro, Quesada Romero, and Bentin Wong Lu. 
+
+diameter_nodes <- get_diameter(giant_component, directed = FALSE)
+
+cat("Nodes in the diameter:", V(giant_component)[diameter_nodes]$id, "\n")
+```
+
+```{r}
+# I went to gather the two most distant nodes, which came to Michell Wong Lu. 
+
+farthest <- farthest_vertices(giant_component, directed = FALSE)
+cat("Farthest nodes:", V(giant_component)[c(farthest$vertices)]$id, "\n")
+```
+
+```{r}
+library(ggraph)
+library(tidygraph)
+library(ggplot2)
+
+# I computed the betweenness centrality.
+
+V(giant_component)$betweenness <- betweenness(giant_component)
+
+# I then converted the graph into a tibble.
+
+graph_tbl <- as_tbl_graph(giant_component)
+
+# I created a visualization with betweenness highlighted. 
+
+ggraph(graph_tbl, layout = "fr") +  
+  geom_edge_link(alpha = 0.5) +  
+  geom_node_point(aes(size = betweenness, color = betweenness)) +  
+  scale_color_gradient(low = "blue", high = "red") +  
+  theme_minimal() +  
+  ggtitle("Betweenness Centrality in the Giant Component")
+```
+
+```{r}
+cat("Number of nodes:", vcount(giant_component), "\n")
+cat("Number of edges:", ecount(giant_component), "\n")
+```
+
+```{r}
+# I made sure the nodes names were secured.
+
+if (is.null(V(giant_component)$id) || any(is.na(V(giant_component)$id))) {
+  V(giant_component)$id <- as.character(1:vcount(giant_component))
+}
+```
+
+```{r}
+# I then computed centrality measures (Degree, Closeness, Betweenness).
+
+centrality_df <- data.frame(
+  name = V(giant_component)$id,
+  degree = degree(giant_component),
+  closeness = closeness(giant_component, normalized = TRUE),
+  betweenness = betweenness(giant_component)
+)
+
+head(centrality_df)
+```
+
+```{r}
+# I plotted the scatterplot of Degree vs Betweenness colored by Closeness.
+
+library(ggplot2)
+
+ggplot(centrality_df, aes(x = degree, y = betweenness, color = closeness)) +
+  geom_point(size = 3, alpha = 0.7) +
+  scale_color_gradient(low = "blue", high = "red") +
+  theme_minimal() +
+  ggtitle("Scatterplot of Centrality Measures (Degree vs Betweenness)")
+```
+
+```{r}
+library(ggraph)
+library(tidygraph)
+
+# I created a tibble version of the graph for safety. 
+
+graph_tbl <- as_tbl_graph(giant_component)
+
+# I visualized another graph with nodes colored by their betweenness centrality. 
+
+ggraph(graph_tbl, layout = "fr") +  
+  geom_edge_link(alpha = 0.5) +  
+  geom_node_point(aes(size = betweenness, color = betweenness)) +  
+  scale_color_gradient(low = "green", high = "red") +  
+  theme_minimal() +  
+  ggtitle("Graph with Nodes Highlighted by Betweenness Centrality")
+```
+
+# SEATTLE DATA
+
+```{r}
+rm(list = ls())
+
+library(sf)
+
+case2link='https://github.com/jaredjimenezjenkins/HW2_repo/raw/refs/heads/main/SeattleTopNetworkofficial.graphml'
+
+library(igraph)
+
+topnet=read_graph(case2link,format='graphml')
+
+summary(topnet)
+```
+
+```{r}
+# I checked if the network is connected, which it is!
+is_connected_result <- is_connected(topnet)
+
+
+if (is_connected_result) {
+  print("The network is connected.")
+} else {
+  print("The network is not connected.")
+}
+```
+
+```{r}
+# Since it's connected, I proceed on checking the number of nodes and edges in the (possibly giant) component.
+
+summary(topnet)
+```
+
+```{r}
+# I went to see which nodes needed to be deleted, which there were none. 
+
+articulation_points <- articulation_points(topnet)
+
+num_nodes_to_delete <- length(articulation_points)
+num_nodes_to_delete
+```
+
+There is no nodes that need to be deleted!
+
+```{r}
+library(igraph)
+
+topnet <- read_graph(case2link, format = 'graphml')
+
+# Check the network summary to ensure it's loaded correctly
+summary(topnet)
+
+# I check the number of nodes in the network
+num_nodes <- vcount(topnet)
+cat("Number of nodes in the network: ", num_nodes, "\n")
+
+# Check the number of edges in the network
+num_edges <- ecount(topnet)
+cat("Number of edges in the network: ", num_edges, "\n")
+```
+```{r}
+# I checked for safety if the network is directed.
+is_directed(topnet)
+topnet <- as.directed(topnet)
+
+# Compute Hubs and Authorities
+
+hub_scores <- hub_score(topnet)$vector
+authority_scores <- authority_score(topnet)$vector
+
+pagerank_scores <- page_rank(topnet)$vector
+
+# I ensured that all score vectors have the same length as the number of nodes.
+
+length(hub_scores)  
+length(authority_scores) 
+length(pagerank_scores) 
+```
+```{r}
+library(igraph)
+
+# I loaded in the network. 
+
+topnet <- read_graph(case2link, format = 'graphml')
+
+# Check the network summary to ensure it's loaded correctly.
+
+summary(topnet)
+
+# I checked the number of nodes and edges in the network.
+
+num_nodes <- vcount(topnet)
+cat("Number of nodes in the network: ", num_nodes, "\n")
+
+num_edges <- ecount(topnet)
+cat("Number of edges in the network: ", num_edges, "\n")
+```
+
+```{r}
+# For safety, I checked the node names directly to avoid any mismatch.
+
+node_names <- V(topnet)$name 
+cat("Node names: ", node_names[1:5], "\n")  # Display the first 5 node names
+```
+
+```{r}
+# I then check the first few vertex attributes for safety measures.
+
+vertex_attr(topnet)
+```
+
+```{r}
+# I then created a DataFrame with Hubs, Authorities, and PageRank scores. 
+
+link_analysis_df <- data.frame(
+  name = V(topnet)$id,       
+  hub = hub_scores,           
+  authority = authority_scores,  
+  pagerank = pagerank_scores    
+)
+
+head(link_analysis_df)
+```
+
+```{r}
+library(ggplot2)
+# I created a scatter plot of Hubs, Authorities, and PageRank.
+
+ggplot(link_analysis_df, aes(x = hub, y = authority, color = pagerank)) +
+  geom_point() +
+  labs(
+    title = "Link Analysis: Hubs, Authorities, and PageRank",
+    x = "Hub Score",
+    y = "Authority Score",
+    color = "PageRank Score"
+  ) +
+  theme_minimal()
+```
+
+# FIFA DATA
+
+```{r}
+library(igraph)
+library(tidygraph)
+library(ggraph)
+library(ggplot2)
+library(dplyr)
+library(readxl)
+```
+
+```{r}
+rm(list = ls())
+
+library(sf)
+
+case3link='https://github.com/jaredjimenezjenkins/HW2_repo/raw/refs/heads/main/country_projection.graphml'
+
+library(igraph)
+
+club_country_graph=read_graph(case3link,format='graphml')
+
+summary(club_country_graph)
+```
+
+```{r}
+rm(list = ls())
+
+library(sf)
+
+case3countrieslink='https://github.com/jaredjimenezjenkins/HW2_repo/raw/refs/heads/main/country_country_projectionupdated.graphml'
+
+library(igraph)
+
+country_country_graph=read_graph(case3countrieslink,format='graphml')
+
+summary(country_country_graph)
+```
+
+```{r}
+# As done before, I checked to see if the network is connected, which it is!
+
+if (is.connected(country_country_graph)) {
+  message("The network is connected.")
+} else {
+  message("The network is disconnected. Extracting the giant component.")
+}
+```
+
+```{r}
+# I proceed on calculating the network density.
+
+network_density <- edge_density(country_country_graph)
+message("Network Density: ", network_density)
+```
+
+```{r}
+# I then calculated the centrality measures. 
+
+degree_centrality <- degree(country_country_graph)
+betweenness_centrality <- betweenness(country_country_graph)
+closeness_centrality <- closeness(country_country_graph)
+```
+
+```{r}
+# After that, I verified the number of vertices and made sure all the vectors were the same length.
+
+num_vertices <- length(V(country_country_graph))
+
+length(degree_centrality)  
+length(betweenness_centrality)  
+length(closeness_centrality)  
+```
+
+```{r}
+# I looked for the vertices names for safety measures. 
+
+print(V(country_country_graph)$id)  
+```
+
+```{r}
+vertex_attr(country_country_graph)
+```
+
+```{r}
+# I created a dataframe. 
+
+countrycentrality_df <- data.frame(
+  Vertex = V(country_country_graph)$id,
+  Degree = degree_centrality,
+  Betweenness = betweenness_centrality,
+  Closeness = closeness_centrality
+)
+
+print(countrycentrality_df)
+```
+
+```{r}
+# I created a scatterplot of the centrality measures. 
+
+library(ggplot2)
+ggplot(countrycentrality_df, aes(x = Degree, y = Betweenness, color = Closeness)) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "Centrality Measures of Countries", x = "Degree Centrality", y = "Betweenness Centrality")
+```
+
+# The End!
